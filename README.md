@@ -1,24 +1,6 @@
-![image](https://github.com/user-attachments/assets/b847cd4e-5944-44a8-9031-0a8cac13ceb8)📌 功能要求
-使用 HTML5 语义结构划分页面
-包含以下内容：
-头像
-姓名、职业、联系方式
-技能列表（用进度条或条形图）
-教育背景 / 工作经验
-兴趣爱好
-使用 CSS3 做出美观排版和样式
+![image](https://github.com/user-attachments/assets/b847cd4e-5944-44a8-9031-0a8cac13ceb8)
+<img width="480" alt="截屏2025-05-30 13 27 31" src="https://github.com/user-attachments/assets/cb98a321-698d-4ab0-9014-fc1aa4913457" />
 
-
-📝知识点
-使用 HTML5 语义标签（<header>、<nav>、<main>、<section>、<footer>）
-使用 CSS3 实现基本样式、字体、颜色、盒模型、Flexbox 布局
-
-
-✅ （JS）扩展功能清单
-🎯 CSS 动画（头像淡入、模块过渡）
-📱 响应式布局（移动端优化）
-📊 技能条形图（封装成可重用的组件并且加入交互式显示百分比数字）
-🌗 可切换深浅主题模式
 
 【具体内容⬇️】
 
