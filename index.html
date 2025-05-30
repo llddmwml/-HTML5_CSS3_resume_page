@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 + CSS3 个人简历页面</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <img src="./avatar.jpg" alt="个人头像" class="avatar">
+    <h1>张三</h1>
+    <p class="title">前端开发工程师</p>
+    <button id="theme-toggle">切换主题</button>
+  </header>
+  <main>
+    <section>
+      <h2>联系方式</h2>
+      <ul>
+        <li>Email:xxxxx@xxxxx.com</li>
+        <li>Phone:13800138000</li>
+        <li>Address:xxxxx</li>
+      </ul>
+    </section>
+    <section>
+      <h2>技能</h2>
+      <div class="skills-bar" data-skill="HTML5" data-value="90"></div>
+      <div class="skills-bar" data-skill="CSS3" data-value="80"></div>
+      <div class="skills-bar" data-skill="JavaScript" data-value="70"></div>
+      <div class="skills-bar" data-skill="react" data-value="100"></div>
+    </section>
+    </section>
+    <section>
+      <h2>教育背景</h2>
+      <p>xxx大学，计算机科学，2016级，计算机科学与技术专业，本科，专业排名第一。</p>
+    </section>
+  </main>
+  <footer>
+    <p>Copyright © 2025 xxxx. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // 切换主题
+    const btn = document.getElementById('theme-toggle')
+    btn.addEventListener('click', () => {
+      document.body.classList.toggle('dark')
+      document.body.classList.toggle('light')
+    })
+    document.body.classList.add('light')
+
+    //动态设置技能条
+    window.addEventListener('DOMContentLoaded', () => {
+      const skillBars = document.querySelectorAll('.skills-bar')
+
+      skillBars.forEach(bar => {
+        const skillName = bar.getAttribute('data-skill')
+        const skillValue = parseInt(bar.getAttribute('data-value'))
+
+        const label = document.createElement('label')
+        const nameSpan = document.createElement('span')
+        const valueSpan = document.createElement('span')
+
+        nameSpan.textContent = skillName
+        valueSpan.textContent = '0%'
+
+        label.appendChild(nameSpan)
+        label.appendChild(valueSpan)
+
+        bar.appendChild(label)
+
+        const barContainer = document.createElement('div')
+        barContainer.classList.add('bar')
+
+        const barValue = document.createElement('div')
+        barValue.classList.add('value')
+
+        barContainer.appendChild(barValue)
+        bar.appendChild(barContainer)
+
+        setTimeout(() => {
+          barValue.style.width = skillValue + '%'
+          let current = 0
+          const interval = setInterval(() => {
+            current++
+            valueSpan.textContent = current + '%'
+            if (current >= skillValue) {
+              clearInterval(interval)
+            }
+
+          }, 1500 / skillValue)
+        }, 200)
+
+
+      })
+    })
+
+  </script>
+</body>
+
+</html>

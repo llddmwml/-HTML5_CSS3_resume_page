@@ -1,0 +1,179 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 2em 1em;
+}
+
+.avatar {
+  width: 120px;
+  border-radius: 50%;
+}
+
+.title {
+  font-size: 1.2em;
+  color: #ccc;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+.skills li {
+  display: inline-block;
+  background: #007BFF;
+  color: white;
+  padding: 0.3em 0.6em;
+  margin: 0.2em;
+  border-radius: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 1em;
+  background: #222;
+  color: #aaa;
+}
+
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+header,
+section {
+  animation: fadeIn 1s ease forwards;
+}
+
+.avatar {
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* 响应式布局 */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .skills li {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5em;
+    text-align: center;
+  }
+
+  header,
+  main {
+    padding: 1em;
+  }
+
+  .avatar {
+    width: 80px;
+  }
+}
+
+
+/* 技能条形图 */
+.skills-bar {
+  margin-bottom: 1em;
+}
+
+.skills-bar label {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.skills-bar .bar {
+  background: #ddd;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.skills-bar .value {
+  background: var(--primary);
+  height: 100%;
+  width: 0;
+  border-radius: 10px;
+  /* animation: growBar 1.5s ease-out forwards; */
+  transition: width 0.5s ease-out;
+}
+
+/* 
+@keyframes growBar {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: var(--value)
+  }
+} */
+
+/* 切换深/浅主题 */
+:root {
+  --bg: #f5f5f5;
+  --text: #333;
+  --card-bg: #fff;
+  --primary: #007BFF;
+}
+
+body.light {
+  --bg: #f5f5f5;
+  --text: #333;
+  --card-bg: #fff;
+}
+
+body.dark {
+  --bg: #222;
+  --text: #eee;
+  --card-bg: #333;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.3s ease;
+}
+
+main {
+  background: var(--card-bg);
+}
+
+button#theme-toggle {
+  margin-top: 1em;
+  padding: 0.5em 1em;
+  border: none;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+}
